@@ -1,4 +1,4 @@
-# Machine-Learning-Assignment
+# Pattern-Recognition-and-Machine-Learning-Assignment
 
 ## Question 1 - Preprocessing, dimensionality reduction, visualization, and classification of images
 
