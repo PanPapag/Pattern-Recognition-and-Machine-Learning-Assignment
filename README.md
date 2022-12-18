@@ -23,4 +23,9 @@ Tasks:
     
     3.4 Which classifier has the best performance and why?
     
-## Question 2 - Normalized Non-Negative Matrix Factorization
+## Question 2 - Regularized Non-Negative Matrix Factorization
+
+
+$$a^2 + b^2 = c^2$$
+
+
