@@ -24,8 +24,12 @@ Tasks:
     3.4 Which classifier has the best performance and why?
     
 ## Question 2 - Regularized Non-Negative Matrix Factorization
+Consider the following optimization problem for regularized non-negative matrix factorization (regNMF):
 
+$$\min_{W,C} \lVert X - WC \rVert_F^2 + \lambda \lVert W \rVert_F^2 + \lambda \lVert C \rVert_F^2, s.t. W \geq 0, C  \geq 0$$
 
-$$a^2 + b^2 = c^2$$
+The problem clearly has no closed-form solution, and therefore must be solved iteratively. Implement in the function RegNMF(X,k,lambda,epsilon) an iterative algorithm for solving the above optimization problem. The function takes as input a non-negative matrix X of dimensions d x N, the number of components k, and the value of the regularization parameter lambda and the termination threshold epsilon, and returns the non-negative matrices W of dimensions d x k and C of dimensions k x N.
 
+To determine if an iterative algorithm is converging to the optimal solution, we usually follow the reconstruction error ||X - W[t]C[t]||_F^2/||X||_F^2 at each iteration, and if the change between two consecutive iterations is smaller than a threshold e (||X - W[t]C[t]||_F^2 - ||X - W[t-1]C[t-1]||_F^2 )/||X||_F^2 < e, with e being 0.01 or 0.001 or 0.0001, we terminate the algorithm. t in the above relationships represents the iteration index.
 
+You are asked to study the convergence of the algorithm using synthetic data. Specifically, construct a random matrix X of dimensions 500 x 1000 with non-negative values, and study the behavior of the regNMF algorithm with respect to the number of iterations required for convergence, for k = 1, 10, 100, and e = 0.1, 0.01, 0.001. What are your conclusions about the behavior of the algorithm for different values of k and epsilon (e)?
